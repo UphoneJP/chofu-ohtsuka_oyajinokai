@@ -1,0 +1,313 @@
+@charset "utf-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+html {
+    font-family: 'M PLUS 1', sans-serif;
+}
+/* ①◆ */
+#initial_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(高い.jpg);
+    background-size: cover;
+    background-position: -300px;
+    z-index: 3;
+    animation: initial_movie 6s normal forwards ease-in;
+}
+@keyframes initial_movie {
+    0% {
+        opacity: 0;
+        /* background-image: url(高い.jpg); */
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        background-image: url(ランドセル.jpg);
+        background-position: -240px;
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        background-image: url(ランドセル.jpg);
+        background-position: -240px;
+        display: none;
+    }
+}
+
+/* ②◆ */
+#imashika {
+    /* z-index: 3; */
+    position: absolute;
+    right: 0;
+    left: 0;
+    text-align: center;
+    top: 40%;
+    font-size: 1.5em;
+    letter-spacing: 3px;
+    display: inline-block;
+    background: linear-gradient(180deg, #0072b4 0%, #7bc0be 72%, #afebea 100%);
+    background: -webkit-linear-gradient(-90deg, #0072b4 0%, #7bc0be 72%, #afebea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#name {
+    /* z-index: 3; */
+    position: absolute;
+    bottom: 40%;
+    right: 0;
+    left: 0;
+    text-align: center;
+    display: inline-block;
+    background: linear-gradient(135deg, #fed878 0%, #fa505e 100%);
+    background: -webkit-linear-gradient(-45deg, #fed878 0%, #fa505e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    font-size: 1.2em;
+}
+#second_box {
+    animation: second_movie 13s forwards linear;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+@keyframes second_movie {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* ③◆ */
+#skip {
+    padding: 8px;
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    color: #aaa;
+    transition: 0.2s;
+}
+#skip:hover {
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+}
+#skip:active {
+    transform: translateY(3px);
+    opacity: .7;
+}
+#third_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    animation: fadeOut 10s forwards linear;
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* ④◆ */
+#mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: masking 14s forwards linear;
+    z-index: 2;
+}
+@keyframes masking {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* メディアクエリ◆ */
+@media (min-width: 600px){
+    #initial_box {
+        background-position: 0px;
+        animation: initial_movie 10s normal forwards linear;
+    }
+    @keyframes initial_movie {
+        0% {
+            opacity: 0;
+            background-image: url(高い.jpg);
+        }
+        20% {
+            opacity: 1;
+        }
+        85% {
+            background-image: url(ランドセル.jpg);
+            background-position: 0px;
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+            background-image: url(ランドセル.jpg);
+            background-position: 0px;
+            display: none;
+        }
+    }
+}
+.erase {
+    display: none;
+}
+
+/* ■■メイン */
+#head {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 10%;
+    text-align: center;
+    display: inline-block;
+    background: linear-gradient(135deg, #fed878 0%, #fa505e 100%);
+    background: -webkit-linear-gradient(-45deg, #fed878 0%, #fa505e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    font-size: 1.2em;
+}
+#container {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+.icon {
+    text-align: center;
+    margin: 32px 0;
+    transition: .2s;
+}
+.icon:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+}
+.icon:active {
+    transform: translateY(-4px);
+    opacity: .7;
+}
+
+#black {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #444;
+    opacity: .7;
+}
+.comments {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    bottom: 20%;
+    left: 10%;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 0 16px;
+    padding: 32px;
+    font-weight: 300;
+    line-height: 1.5;
+    transition: .8s;
+}
+.close {
+    display: block;
+    margin: 0.5em auto 0;
+}
+#black.hidden,
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 16px 0;
+}
