@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="syoukai.css">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap" rel="stylesheet">
-
-
 </head>
 
 <body>
     <header>
 <!--         <audio autoplay><source src="Refreshing_Morning.mp3"></audio> -->
-        <audio src="Refreshing_Morning.mp3" autoplay></audio>
+<!--         <audio src="Refreshing_Morning.mp3" autoplay></audio> -->
         <div id="initial_box">
         </div>
         <div id="second_box">
@@ -27,7 +25,6 @@
         </div>
         <div id="mask"></div>
     </header>
-
     <main>
         <h1 id="head">調布大塚小学校おやじの会</h1>
         <div id="container">
